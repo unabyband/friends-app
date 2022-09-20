@@ -35,8 +35,8 @@ function createProfile(user) {
     for(let i=0; i<user.length; i++) {
         const card = document.querySelector('.usercards');
         let userProfile = document.createElement('div');
-
-        userProfile.innerHTML = `<img class="user_pic" src="${user[i].picture}" alt="">
+        userProfile.innerHTML = `<img class="user_pic" src="${user[i].picture}" alt=""  
+        onclick="createChat('${user[i].picture}','${user[i].firstName}','${user[i].lastName}')">
             <div class="user_info">
             <h1>${user[i].firstName} ${user[i].lastName}</h1>
             <h2>${user[i].gender}, ${user[i].age}</h2>
@@ -111,4 +111,31 @@ function showFoundUsers () {
     textValue = document.getElementById('text_input').value;
     renderToPage(findUsers(filterUsers(userStorage, gender), textValue));
 }
+
+function createChat(userpic, userFirstName, userLastName) {
+        const card = document.querySelector('main');
+        let userChat = document.createElement('div');
+        
+        userChat.innerHTML = `<div class="material-symbols-outlined" onclick="removeChat()" id='hide_chat'>
+                close
+                </div>
+            <img class="chat_thumbnail" src="${userpic}" alt=""> 
+            <div class="chat_username">${userFirstName} ${userLastName}</div>
+            <textarea class="chat_area" cols="15" rows="10"></textarea>
+            <input type="text" placeholder="Type your message here..." class="chat_input" id="chat_input">`;
+        userChat.classList.add("chat_window");
+        card.append(userChat);
+        let message = document.querySelector('.chat_input');
+        message = addEventListener('change', printMessage);
+}
+
+function removeChat() {
+    document.querySelector('.chat_window').remove();
+}
+
+function printMessage() {
+    message = document.getElementById('chat_input').value;
+    document.querySelector('.chat_area').innerHTML = message; 
+}
+
 
