@@ -60,6 +60,10 @@ main {
     appearance: none;
 }
 
+.hide_selector:hover ~label{
+    background-color: #fff;
+}
+
 .hide_selector:checked ~ .selector {
     display: none;
 }
@@ -216,7 +220,8 @@ label {
     margin: 10px;
     border-radius: 5px;
     border: 1px solid transparent;
-    height: 3em;
+    height: 2em;
+    font-size: medium;
 }
 
 .chat_thumbnail {
@@ -232,8 +237,20 @@ label {
     font-size: large;
 }
 
+.chat_area {
+    max-width: 100%;
+    height: 70%;
+    background-color: white;
+    font-size: small;
+    padding: 5px;
+}
 #hide_chat {
+    margin: 5px 5px -5px 0;
     align-self: flex-end;
     cursor: pointer;
+}
+
+#hide_chat:hover {
+    background-color: #fff;
 }
 

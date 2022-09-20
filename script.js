@@ -121,7 +121,7 @@ function createChat(userpic, userFirstName, userLastName) {
                 </div>
             <img class="chat_thumbnail" src="${userpic}" alt=""> 
             <div class="chat_username">${userFirstName} ${userLastName}</div>
-            <textarea class="chat_area" cols="15" rows="10"></textarea>
+            <div class="chat_area"></div>
             <input type="text" placeholder="Type your message here..." class="chat_input" id="chat_input">`;
         userChat.classList.add("chat_window");
         card.append(userChat);
@@ -135,7 +135,7 @@ function removeChat() {
 
 function printMessage() {
     message = document.getElementById('chat_input').value;
-    document.querySelector('.chat_area').innerHTML = message; 
+    document.querySelector('.chat_area').innerHTML = `<h2>You: </h2><h3>${message}</h3> \n Sent: ${Date()}`; 
 }
 
 
