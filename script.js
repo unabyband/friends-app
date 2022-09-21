@@ -35,7 +35,7 @@ function createProfile(user) {
     for(let i=0; i<user.length; i++) {
         const card = document.querySelector('.usercards');
         let userProfile = document.createElement('div');
-        userProfile.innerHTML = `<img class="user_pic" src="${user[i].picture}" alt=""  
+        userProfile.innerHTML = `<img class="user_pic" src="${user[i].picture}" alt="Photo of user profile"  
         onclick="createChat('${user[i].picture}','${user[i].firstName}','${user[i].lastName}')">
             <div class="user_info">
             <h1>${user[i].firstName} ${user[i].lastName}</h1>
@@ -119,7 +119,7 @@ function createChat(userpic, userFirstName, userLastName) {
         userChat.innerHTML = `<div class="material-symbols-outlined" onclick="removeChat()" id='hide_chat'>
                 close
                 </div>
-            <img class="chat_thumbnail" src="${userpic}" alt=""> 
+            <img class="chat_thumbnail" src="${userpic}" alt="Photo of user profile"> 
             <div class="chat_username">${userFirstName} ${userLastName}</div>
             <div class="chat_area"></div>
             <input type="text" placeholder="Type your message here..." class="chat_input" id="chat_input">`;

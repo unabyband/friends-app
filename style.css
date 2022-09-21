@@ -126,7 +126,7 @@ label {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
-    width: calc(100vh / 4);
+    width: calc(100vw / 8);
     height: calc(100vh / 4);
     margin: 10px 5px;
     background-color: lightblue;
@@ -196,9 +196,9 @@ label {
     align-self: flex-end;
     flex-direction: column;
     position: fixed;
-    width: calc(100vh / 3);
+    width: 250px;
     height: calc(100vh / 2);
-    margin-left: 83%;
+    margin-left: calc(100vw - 270px);
     margin-bottom: 10px;
     background-image: linear-gradient(to left, lightblue, lightpink);
     box-shadow: 5px 5px 5px gray;
