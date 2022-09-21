@@ -4,7 +4,6 @@
     box-sizing: border-box;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
-
 body {
     background-color: lightgrey;
     color: darkblue;
@@ -18,13 +17,11 @@ header {
     animation: slide 1s linear;
     background-image: linear-gradient(to right,lightpink, lightblue);
 }
-
 main {
     display: flex;
     height: calc(100vh - 50px);
     overflow: auto;
 }
-
 .selector {
     display: flex;
     min-width: 200px;
@@ -40,7 +37,6 @@ main {
     font-size: large;
     font-weight: bold;
 }
-
 .selector_closed {
     position: fixed;
     z-index: 5;
@@ -48,38 +44,30 @@ main {
     margin-left: 15px;
     visibility: collapse;
 }
-
 .selector_opened {
     position: fixed;
     z-index: 5;
     margin-top: -40px;
     margin-left: 15px;
 }
-
 .hide_selector {
     appearance: none;
 }
-
 .hide_selector:hover ~label{
     background-color: #fff;
 }
-
 .hide_selector:checked ~ .selector {
     display: none;
 }
-
 .hide_selector:checked ~ .selector_closed {
     visibility: visible;
 }
-
 .hide_selector:checked ~ .selector_opened {
     visibility: collapse;
 }
-
 label {
     cursor: pointer;
 }
-
 .selector_gender {
     display: flex;
     flex-direction: row;
@@ -87,7 +75,6 @@ label {
     align-items: baseline;
     margin-bottom: 20px;
 }
-
 .selector_sort {
     display: flex;
     flex-direction: row;
@@ -97,31 +84,25 @@ label {
     flex-wrap: wrap;
     margin-bottom: 20px;
 }
-
 .selector_sort label {
     min-width: 20%;
     margin-bottom: 15px;
 }
-
 .sort_check {
     appearance: none;
 }
-
 .sort_check:focus + .material-symbols-outlined {
     border: 2px solid black;
 }
-
 .material-symbols-outlined {
     border-radius: 5px;
     border: 2px solid transparent;
 }
-
 .usercards {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
 }
-
 .user_profile {
     display: flex;
     flex-direction: column;
@@ -137,60 +118,48 @@ label {
     align-items: center;
     cursor: pointer;
 }
-
 .user_profile:hover {
-    transition: .3s;
-    width: calc(100vh / 3);
-    height: calc(100vh / 2.5);
+    transition: .5s;
+    scale: 1.1;
 }
-
 .user_profile:hover > .user_info span {
     display: block;
 }
-
 .user_profile:hover > .user_pic {
     height: 50%;
 }
-
 .female {
     background-color: lightpink;
 }
-
 .user_pic {
     margin-top: 5px;
     border-radius: 50%;
     height: 40%; 
 }
-
 .user_info {
     margin: 5px;
 }
 .user_info h1 {
     font-size: 15px;
 }
-
 .user_info h2 {
     font-size: 14px;
     font-style: italic;
 }
-
 .user_info p {
     font-size: 12px;
 }
-
 .user_info span {
     font-size: 14px;
     cursor: text;
     display: none;
 }
-
 .text_check {
     border-radius: 5px;
     border: 1px solid transparent;
     height: 2em;
     width: 100%;
 }
-
 .chat_window {
     display: flex;
     align-self: flex-end;
@@ -207,7 +176,6 @@ label {
     justify-content: space-between;
     align-items:stretch;
 }
-
 .chat_area {
     margin: 10px;
     border: 1px solid transparent;
@@ -215,7 +183,6 @@ label {
     resize: none;
     height: 100%;
 }
-
 .chat_input {
     margin: 10px;
     border-radius: 5px;
@@ -223,20 +190,17 @@ label {
     height: 2em;
     font-size: medium;
 }
-
 .chat_thumbnail {
     align-self:flex-start;
     margin: -15px 0 0 10px;
     max-height: 15%;
     border-radius: 50%;
 }
-
 .chat_username {
     align-self:flex-end;
     margin: -20px 10px 0 0;
     font-size: large;
 }
-
 .chat_area {
     max-width: 100%;
     height: 70%;
@@ -249,8 +213,91 @@ label {
     align-self: flex-end;
     cursor: pointer;
 }
-
 #hide_chat:hover {
     background-color: #fff;
+}
+
+@media (max-width: 1024px) {    
+    header {
+        font-size: 20px;
+        display: none;
+    }
+    main {
+        display: grid;
+        min-height: 100%;
+        grid-template-columns: 1fr;
+    }
+    .selector {
+        max-width: 100vw;
+        padding: 20px 30vw;
+        font-size: 40px;
+        position: fixed;
+    }
+    .text_check {
+        border-radius: 15px;
+        border: 1px solid transparent;
+        font-size: 35px;
+    }
+    .usercards {
+        margin-top: 320px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        overflow-y: auto;
+        height: max-content;
+        grid-gap: 16px;
+        padding: 0 16px 16px;
+    }   
+    .user_profile {
+        width: 30vw;
+    }
+    .user_profile:hover > .user_pic {
+        height: 40%;
+    }
+    .user_info {
+        max-width: 90%;
+        word-wrap:break-word;
+    }
+    .user_info h1 {
+        font-size: 32px;
+    }
+    .user_info h2 {
+        font-size: 29px;
+        font-style: italic;
+    }
+    .user_info p {
+        font-size: 27px;
+    }
+    .user_info span {
+        font-size: 25px;
+        cursor: text;
+        display: none;
+    }
+    .chat_window {
+        width: 100vw;
+        margin: 0;
+        height: 25vh;
+        border: none;
+    }
+    .chat_thumbnail {
+        margin-left: 20px;
+        max-height: 30%;
+    }
+    .chat_username {
+        font-size: 34px;
+    }
+    .chat_input {
+        font-size: 35px;
+        border-radius: 15px;
+    }
+    .chat_area {
+        font-size: 22px;
+        border-radius: 15px;
+    }
+    .gender_check, .material-symbols-outlined {
+        scale: 2;
+    }
+    #hide_chat {
+        margin: 15px 15px 0;
+    }
 }
 

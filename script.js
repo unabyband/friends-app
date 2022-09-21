@@ -130,12 +130,11 @@ function createChat(userpic, userFirstName, userLastName) {
 }
 
 function removeChat() {
-    document.querySelector('.chat_window').remove();
+    document.querySelectorAll('.chat_window').forEach((chatWindow) => chatWindow.remove());
 }
 
 function printMessage() {
     message = document.getElementById('chat_input').value;
-    document.querySelector('.chat_area').innerHTML = `<h2>You: </h2><h3>${message}</h3> \n Sent: ${Date()}`; 
+    document.querySelector('.chat_area').innerHTML = `<h3>You: </h3><h2>${message}</h2> \n Sent: ${Date()}`; 
 }
-
 
