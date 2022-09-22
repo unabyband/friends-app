@@ -116,9 +116,9 @@ function createChat(userpic, userFirstName, userLastName) {
         const card = document.querySelector('main');
         let userChat = document.createElement('div');
         
-        userChat.innerHTML = `<div class="material-symbols-outlined" onclick="removeChat()" id='hide_chat'>
+        userChat.innerHTML = `<label class="hide_chat" for="hide_chat" onclick="removeChat()"><div class="material-symbols-outlined" id='hide_chat'>
                 close
-                </div>
+                </div></label>
             <img class="chat_thumbnail" src="${userpic}" alt="Photo of user profile"> 
             <div class="chat_username">${userFirstName} ${userLastName}</div>
             <div class="chat_area"></div>
@@ -134,7 +134,9 @@ function removeChat() {
 }
 
 function printMessage() {
-    message = document.getElementById('chat_input').value;
-    document.querySelector('.chat_area').innerHTML = `<h3>You: </h3><h2>${message}</h2> \n Sent: ${Date()}`; 
+    let message = document.getElementById('chat_input').value;
+    if(message != null) {
+        document.querySelector('.chat_area').innerHTML = `<h3>You: </h3><h2>${message}</h2> \n Sent: ${Date()}`;   
+    }
 }
 

@@ -138,6 +138,8 @@ label {
 }
 .user_info {
     margin: 5px;
+    max-width: 90%;
+    word-wrap:break-word;
 }
 .user_info h1 {
     font-size: 15px;
@@ -208,16 +210,16 @@ label {
     font-size: small;
     padding: 5px;
 }
-#hide_chat {
+.hide_chat {
     margin: 5px 5px -5px 0;
     align-self: flex-end;
     cursor: pointer;
 }
-#hide_chat:hover {
+.hide_chat:hover {
     background-color: #fff;
 }
 
-@media (max-width: 1024px) {    
+@media screen and (max-width: 1024px) and (min-height: 601px) {    
     header {
         font-size: 20px;
         display: none;
@@ -253,10 +255,6 @@ label {
     .user_profile:hover > .user_pic {
         height: 40%;
     }
-    .user_info {
-        max-width: 90%;
-        word-wrap:break-word;
-    }
     .user_info h1 {
         font-size: 32px;
     }
@@ -275,8 +273,7 @@ label {
     .chat_window {
         width: 100vw;
         margin: 0;
-        height: 25vh;
-        border: none;
+        height: 50vh;
     }
     .chat_thumbnail {
         margin-left: 20px;
@@ -288,6 +285,8 @@ label {
     .chat_input {
         font-size: 35px;
         border-radius: 15px;
+        height: 4em;
+        margin-bottom: 5vh;
     }
     .chat_area {
         font-size: 22px;
@@ -296,8 +295,9 @@ label {
     .gender_check, .material-symbols-outlined {
         scale: 2;
     }
-    #hide_chat {
-        margin: 15px 15px 0;
+    .hide_chat {
+        margin: 20px 25px 0;
+        scale: 1.5;
     }
 }
 
