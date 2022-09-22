@@ -35,8 +35,10 @@ function createProfile(user) {
     for(let i=0; i<user.length; i++) {
         const card = document.querySelector('.usercards');
         let userProfile = document.createElement('div');
-        userProfile.innerHTML = `<img class="user_pic" src="${user[i].picture}" alt="Photo of user profile"  
-        onclick="createChat('${user[i].picture}','${user[i].firstName}','${user[i].lastName}')">
+        userProfile.innerHTML = `<label class="start_chat_button" for="start_chat" 
+            onclick="createChat('${user[i].picture}','${user[i].firstName}','${user[i].lastName}')">
+            <div class="material-symbols-outlined" id="start_chat">chat</div></label>
+            <img class="user_pic" src="${user[i].picture}" alt="Photo of user profile">
             <div class="user_info">
             <h1>${user[i].firstName} ${user[i].lastName}</h1>
             <h2>${user[i].gender}, ${user[i].age}</h2>
@@ -93,7 +95,11 @@ filtering.forEach((element) => element.addEventListener('change', showFilteredUs
 
 function showFilteredUsers() {
     gender = this.value;
+    if(rule == 'none'){
     renderToPage(filterUsers((findUsers(userStorage, textValue)), gender));
+    } else {
+        renderToPage(filterUsers((sortUsers((findUsers(userStorage, textValue)), rule)), gender));
+    }
 }
 
 const sorting = document.querySelectorAll('.sort_check');
@@ -109,24 +115,27 @@ searching = addEventListener('input', showFoundUsers);
 
 function showFoundUsers () {
     textValue = document.getElementById('text_input').value;
-    renderToPage(findUsers(filterUsers(userStorage, gender), textValue));
+    renderToPage(findUsers(filterUsers(userStorage, gender), textValue));   
 }
 
 function createChat(userpic, userFirstName, userLastName) {
         const card = document.querySelector('main');
         let userChat = document.createElement('div');
         
-        userChat.innerHTML = `<label class="hide_chat" for="hide_chat" onclick="removeChat()"><div class="material-symbols-outlined" id='hide_chat'>
-                close
-                </div></label>
+        userChat.innerHTML = `<label class="hide_chat_button" for="hide_chat" onclick="removeChat()">
+            <div class="material-symbols-outlined" id='hide_chat'>close</div></label>
             <img class="chat_thumbnail" src="${userpic}" alt="Photo of user profile"> 
             <div class="chat_username">${userFirstName} ${userLastName}</div>
             <div class="chat_area"></div>
-            <input type="text" placeholder="Type your message here..." class="chat_input" id="chat_input">`;
+            <div class="message_area">
+            <input type="text" placeholder="Type your message here..." class="chat_input" id="chat_input">
+            <label class="send_message_button" for="send_message" onclick="printMessage">
+            <div class="material-symbols-outlined" id="send_message" >send</div></label>
+            </div>`;
         userChat.classList.add("chat_window");
         card.append(userChat);
-        let message = document.querySelector('.chat_input');
-        message = addEventListener('change', printMessage);
+        let sendByEnter = document.querySelector('.chat_input');
+        sendByEnter = addEventListener('change', printMessage);
 }
 
 function removeChat() {
@@ -136,7 +145,11 @@ function removeChat() {
 function printMessage() {
     let message = document.getElementById('chat_input').value;
     if(message != null) {
-        document.querySelector('.chat_area').innerHTML = `<h3>You: </h3><h2>${message}</h2> \n Sent: ${Date()}`;   
+        let sendingTime = new Date();
+        document.querySelector('.chat_area').innerHTML += 
+        `<h3>You:</h3><h2>${message}</h2> \n Sent: ${sendingTime.toLocaleString()}`;   
+        document.querySelector('.chat_area').scrollTo(0, document.body.scrollHeight);
+        document.getElementById('chat_input').value = "";
     }
 }
 

@@ -94,6 +94,9 @@ label {
 .sort_check:focus + .material-symbols-outlined {
     border: 2px solid black;
 }
+.sort_check:checked + .material-symbols-outlined {
+    background-color: #fff;
+}
 .material-symbols-outlined {
     border-radius: 5px;
     border: 2px solid transparent;
@@ -116,7 +119,6 @@ label {
     border-radius: 10px;
     justify-content: space-around;
     align-items: center;
-    cursor: pointer;
 }
 .user_profile:hover {
     transition: .5s;
@@ -128,6 +130,9 @@ label {
 .user_profile:hover > .user_pic {
     height: 50%;
 }
+.user_profile:hover > .start_chat_button {
+    visibility: visible;
+}
 .female {
     background-color: lightpink;
 }
@@ -135,6 +140,15 @@ label {
     margin-top: 5px;
     border-radius: 50%;
     height: 40%; 
+}
+.start_chat_button {
+    cursor: pointer;
+    visibility: collapse;
+    margin-top: 10%;
+    margin-right: 5%;
+    position: fixed;
+    align-self:flex-end;
+    scale: 1.1;
 }
 .user_info {
     margin: 5px;
@@ -153,7 +167,6 @@ label {
 }
 .user_info span {
     font-size: 14px;
-    cursor: text;
     display: none;
 }
 .text_check {
@@ -190,6 +203,7 @@ label {
     border-radius: 5px;
     border: 1px solid transparent;
     height: 2em;
+    width: 80%;
     font-size: medium;
 }
 .chat_thumbnail {
@@ -209,13 +223,31 @@ label {
     background-color: white;
     font-size: small;
     padding: 5px;
+    overflow: auto;
+    word-break: break-all;
 }
-.hide_chat {
+.message_area {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.send_message_button {
+    cursor: pointer;
+    padding-top: 3px;
+    padding-right: 5px;
+    margin-left: -5px;
+    scale: 1.1;
+}
+.send_message_button:active {
+    transition: 0.3s;
+    transform: rotate(-90deg);
+}
+.hide_chat_button {
     margin: 5px 5px -5px 0;
     align-self: flex-end;
     cursor: pointer;
 }
-.hide_chat:hover {
+.hide_chat_button:hover {
     background-color: #fff;
 }
 
@@ -252,6 +284,10 @@ label {
     .user_profile {
         width: 30vw;
     }
+    .start_chat_button {
+        margin: 0 25px 25px 0;
+        scale: 1;
+    }
     .user_profile:hover > .user_pic {
         height: 40%;
     }
@@ -285,18 +321,28 @@ label {
     .chat_input {
         font-size: 35px;
         border-radius: 15px;
-        height: 4em;
+        height: 3em;
         margin-bottom: 5vh;
+        width: 100%;       
+        font-size: 40px;
     }
     .chat_area {
         font-size: 22px;
         border-radius: 15px;
     }
     .gender_check, .material-symbols-outlined {
-        scale: 2;
+        scale: 2.5;
     }
-    .hide_chat {
+    .message_area {
+        align-items: baseline;
+        justify-content: space-between;
+    }
+    .hide_chat_button {
         margin: 20px 25px 0;
+        scale: 1.5;
+    }
+    .send_message_button {
+        margin: 0 30px;
         scale: 1.5;
     }
 }
