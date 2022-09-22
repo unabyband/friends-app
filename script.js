@@ -119,6 +119,9 @@ function showFoundUsers () {
 }
 
 function createChat(userpic, userFirstName, userLastName) {
+    if(document.querySelectorAll('.chat_window').length != 0) {
+        removeChat();
+    }
         const card = document.querySelector('main');
         let userChat = document.createElement('div');
         
