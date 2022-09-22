@@ -150,6 +150,9 @@ label {
     align-self:flex-end;
     scale: 1.1;
 }
+.start_chat_button:hover {
+    background-color: #fff;
+}
 .user_info {
     margin: 5px;
     max-width: 90%;
