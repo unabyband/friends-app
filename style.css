@@ -291,6 +291,11 @@ label {
         margin: 0 25px 25px 0;
         scale: 1;
     }
+    .start_chat_button:hover {
+        background-color: transparent;
+        transition: 0.2s;
+        scale: 0.8;
+    }
     .user_profile:hover > .user_pic {
         height: 40%;
     }
@@ -343,6 +348,11 @@ label {
     .hide_chat_button {
         margin: 20px 25px 0;
         scale: 1.5;
+    }
+    .hide_chat_button:hover {
+        background-color: transparent;
+        transition: 0.2s;
+        scale: 1;
     }
     .send_message_button {
         margin: 0 30px;
