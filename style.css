@@ -119,6 +119,8 @@ label {
     border-radius: 10px;
     justify-content: space-around;
     align-items: center;
+    padding: 5px 10px;
+    cursor: pointer;
 }
 .user_profile:hover {
     transition: .5s;
@@ -162,10 +164,6 @@ label {
 }
 .user_info p {
     font-size: 12px;
-}
-.user_info span {
-    font-size: 12px;
-    display: block;
 }
 .text_check {
     border-radius: 5px;
@@ -251,7 +249,7 @@ label {
     background-color: #fff;
 }
 
-@media screen and (max-width: 1024px) and (min-height: 601px) {    
+@media screen and (max-width: 1024px) and (min-height: 600px) {    
     header {
         font-size: 20px;
         display: none;
@@ -271,6 +269,7 @@ label {
         border-radius: 15px;
         border: 1px solid transparent;
         font-size: 35px;
+        padding-left: 25px;
     }
     .usercards {
         margin-top: 320px;
@@ -297,19 +296,14 @@ label {
         height: 40%;
     }
     .user_info h1 {
-        font-size: 32px;
+        font-size: 24px;
     }
     .user_info h2 {
-        font-size: 29px;
+        font-size: 21px;
         font-style: italic;
     }
     .user_info p {
-        font-size: 27px;
-    }
-    .user_info span {
-        font-size: 25px;
-        cursor: text;
-        display: none;
+        font-size: 22px;
     }
     .chat_window {
         width: 100vw;
@@ -330,6 +324,7 @@ label {
         margin-bottom: 5vh;
         width: 100%;       
         font-size: 40px;
+        padding-left: 25px;
     }
     .chat_area {
         font-size: 22px;

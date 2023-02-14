@@ -18,8 +18,7 @@ async function getUserData() {
         age: usersFromResponse.dob.age,
         gender: usersFromResponse.gender,
         country: usersFromResponse.location.country,
-        city: usersFromResponse.location.city,
-        email: usersFromResponse.email,
+        city: usersFromResponse.location.city
       });
     });
     renderToPage(userStorage);
@@ -49,8 +48,7 @@ function createProfile(userProfiles) {
       userContent.gender,
       userContent.age,
       userContent.city,
-      userContent.country,
-      userContent.email
+      userContent.country
     );
     userProfile.classList.add("user_profile");
     userProfile.classList.add(`${userContent.gender}`);
@@ -64,8 +62,7 @@ function createUserTemplate(
   userGender,
   userAge,
   userCity,
-  userCountry,
-  userMail
+  userCountry
 ) {
   return `
     <label class="start_chat_button" for="start_chat" 
@@ -85,9 +82,6 @@ function createUserTemplate(
         <p>
             ${userCity}, ${userCountry}
         </p>
-        <span>
-            ${userMail}
-        </span>
     </div>`;
 }
 
