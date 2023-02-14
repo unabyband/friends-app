@@ -293,9 +293,9 @@ label {
         height: max-content;
         grid-gap: 16px;
         padding: 0 16px 16px;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     }   
     .user_profile {
-        /* width: 1fr; */
         width: 30vw;
         height: 33vh;
     }
