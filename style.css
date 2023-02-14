@@ -110,9 +110,9 @@ label {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
-    width: calc(100vw / 8);
-    height: calc(100vh / 4);
-    margin: 10px 5px;
+    width: 230px;
+    height: 180px;
+    margin: 5px 5px;
     background-color: lightblue;
     box-shadow: 5px 5px 5px gray;
     border: 2px solid transparent;
@@ -260,8 +260,11 @@ label {
         grid-template-columns: 1fr;
     }
     .selector {
+        margin-top: -20px;
+        margin-left: 0;
+        border-radius: 0;
         z-index: 5;
-        min-width: calc(100vw - 4%);
+        min-width: 100vw;
         padding: 20px 20%;
         font-size: 1.25rem;
         position: fixed;
@@ -292,7 +295,9 @@ label {
         padding: 0 16px 16px;
     }   
     .user_profile {
+        /* width: 1fr; */
         width: 30vw;
+        height: 33vh;
     }
     .start_chat_button {
         margin: 0 25px 25px 0;
@@ -362,4 +367,3 @@ label {
         scale: 1.5;
     }
 }
-
